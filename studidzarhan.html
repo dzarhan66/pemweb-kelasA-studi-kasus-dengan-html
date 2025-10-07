@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Klinik Kampus - UNIPDU</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        #header {
+            background-color: #004a99;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        #main-content {
+            padding: 20px;
+            min-height: 400px;
+            background-color: rgb(255, 255, 255);
+            margin: 10px auto;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        #footer {
+            background-color: #311919;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9em;
+        }
+        table {
+            width: 100%; /* Untuk tabel di form */
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        td {
+            padding: 8px;
+            vertical-align: top;
+        }
+        /* Style untuk Tabel Jadwal */
+        #jadwal-dokter table {
+            width: 50%;
+            margin-top: 10px;
+        }
+        #jadwal-dokter th, #jadwal-dokter td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        #jadwal-dokter th {
+            background-color: #e75151;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <h1>Pendaftaran Klinik Kampus - UNIPDU</h1>
+    </div>
+
+    <div id="main-content">
+        <h2>FORMULIR SURVEY DASAR</h2>
+        
+        <form action="submit_handler.php" method="GET">
+            <table>
+                <tr>
+                    <td><label for="nama_lengkap">Nama Lengkap:</label></td>
+                    <td><input type="text" id="nama_lengkap" name="nama_lengkap" required></td>
+                </tr>
+                
+                <tr>
+                    <td><label for="password">Password:</label></td>
+                    <td><input type="password" id="password" name="password" required></td>
+                </tr>
+                
+                <tr>
+                    <td>Jenis Kelamin:</td>
+                    <td>
+                        <input type="radio" id="lk" name="jenis_kelamin" value="Laki-laki" required>
+                        <label for="lk">Laki-laki</label>
+                        <input type="radio" id="pr" name="jenis_kelamin" value="Perempuan">
+                        <label for="pr">Perempuan</label>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Hobi (Pilih 3):</td>
+                    <td>
+                        <input type="checkbox" id="hobi1" name="hobi[]" value="Membaca">
+                        <label for="hobi1">Membaca</label><br>
+                        <input type="checkbox" id="hobi2" name="hobi[]" value="Olahraga">
+                        <label for="hobi2">Olahraga</label><br>
+                        <input type="checkbox" id="hobi3" name="hobi[]" value="Coding">
+                        <label for="hobi3">Coding</label><br>
+                        <input type="checkbox" id="hobi4" name="hobi[]" value="Lainnya">
+                        <label for="hobi4">Lainnya</label>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td><label for="asal_kota">Asal Kota:</label></td>
+                    <td>
+                        <select id="asal_kota" name="asal_kota" required>
+                            <option value="">-- Pilih Kota --</option>
+                            <option value="Jombang">Jombang</option>
+                            <option value="Surabaya">Surabaya</option>
+                            <option value="Bandung">Bandung</option>
+                        </select>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td><label for="komentar">Komentar:</label></td>
+                    <td>
+                        <textarea id="komentar" name="komentar" rows="4" cols="50"></textarea>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <input type="submit" value="KIRIM DATA (GET)">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <hr>
+
+        <div id="jadwal-dokter">
+            <h3>Jadwal Dokter</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hari</th>
+                        <th>Jam Praktik</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Senin</td>
+                        <td>08:00 - 12:00</td>
+                    </tr>
+                    <tr>
+                        <td>Selasa</td>
+                        <td>13:00 - 17:00</td>
+                    </tr>
+                    <tr>
+                        <td>Rabu</td>
+                        <td>09:00 - 11:00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr>
+
+        <h3>Langkah Pendaftaran</h3>
+        <ol>
+            <li>Isi formulir dengan lengkap.</li>
+            <li>Klik tombol "KIRIM DATA (GET)".</li>
+            <li>Tunggu konfirmasi email.</li>
+        </ol>
+
+    </div>
+
+    <div id="footer">
+        <p>Kontak: (0321) xxxxxxxx | <a href="http://unipdu.ac.id" target="_blank" style="color: white;">Kunjungi Homepage UNIPDU</a></p>
+    </div>
+
+</body>
+</html>
